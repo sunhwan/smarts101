@@ -1,0 +1,32 @@
+{% extends "web/base.html" %}
+{% load i18n %}
+{% load static %}
+{% load form_tags %}
+{% load socialaccount %}
+{% block body %}
+  <div class="flex justify-center my-8 ">
+    <div class="w-96 px-4 py-4 bg-white">
+      <div>
+        <h2 class="mt-6 text-center text-2xl font-bold text-gray-900">
+          {% translate "Sign In" %}
+        </h2>
+        <form class="mt-6 space-y-6" method="post">
+          {% csrf_token %}
+          {{ form.non_field_errors }}
+          {% render_field form.login %}
+          {% render_field form.password %}
+          <div>
+            <input class="btn btn-primary btn-block" type="submit" value="{% translate "Sign In" %}">
+            <p class="text-center text-gray-500 my-2">{% translate "or" %}</p>
+            {% include 'account/components/social/login_with_google_button.html' %}
+          </div>
+        </form>
+        <div class="text-sm mt-4">
+          <a href="{% url 'account_reset_password' %}" class="font-medium text-blue-700 hover:text-blue-500">
+            {% translate "Forgot password?" %}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

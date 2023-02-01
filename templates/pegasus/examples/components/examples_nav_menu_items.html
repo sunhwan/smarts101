@@ -1,0 +1,52 @@
+<li class="menu-title">
+  <span>Pegasus</span>
+</li>
+<li>
+  <a href="{% url 'pegasus_examples:examples_home' %}" {% if active_tab == 'home' %}class="active"{% endif %}>
+    <i class="fa fa-home"></i>
+    Examples Home
+  </a>
+</li>
+<li>
+  <a href="{% url 'pegasus_examples:payments' %}" {% if active_tab == 'payments' %}class="active"{% endif %}>
+    <i class="fa fa-credit-card"></i>
+    Payments
+  </a>
+</li>
+<li>
+  <a href="{% url 'pegasus_employees:object_lifecycle_home' %}"
+     {% if active_tab == 'object_lifecycle' %}class="active"{% endif %}>
+    <i class="fa fa-users"></i>
+    Employee App
+  </a>
+</li>
+<li>
+  <a href="{% url 'pegasus_examples:tasks' %}" {% if active_tab == 'tasks' %}class="active"{% endif %}>
+    <i class="fa fa-tasks"></i>
+    Background Tasks
+  </a>
+</li>
+<li>
+  <a href="{% url 'pegasus_employees:charts' %}" {% if active_tab == 'charts' %}class="active"{% endif %}>
+    <i class="fa fa-bar-chart-o"></i>
+    Charts
+  </a>
+</li>
+<li>
+  <a href="{% url 'pegasus_examples:landing_page' %}" {% if active_tab == 'landing_page' %}class="active"{% endif %}>
+    <i class="fa fa-picture-o"></i>
+    Landing Page
+  </a>
+</li>
+<li>
+  <a href="{% url 'pegasus_examples:pricing_page' %}" {% if active_tab == 'pricing_page' %}class="active"{% endif %}>
+    <i class="fa fa-external-link"></i>
+    Pricing Page
+  </a>
+</li>
+<li>
+  <a href="{% url 'pegasus_examples:flags' %}" {% if active_tab == 'flags' %}class="active"{% endif %}>
+    <i class="fa fa-flag"></i>
+    Feature Flags
+  </a>
+</li>

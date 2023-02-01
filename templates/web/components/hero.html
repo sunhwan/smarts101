@@ -1,0 +1,25 @@
+{% load i18n %}
+{% load static %}
+<section class="my-8 mx-4">
+  <div class="container ">
+    <div class="pg-columns pg-columns-reversed pg-align-items-center">
+      <div class="pg-column">
+        <img class="img-fluid" src="{% static 'images/undraw/undraw_outer_space.svg' %}" alt="{% translate "Fly Away!" %}">
+      </div>
+      <div class="pg-column">
+        <h1 class="pg-title">{{project_meta.NAME}}</h1>
+        <h2 class="pg-subtitle">
+          {{project_meta.DESCRIPTION}}
+        </h2>
+        <p class="buttons">
+          <a class="pg-button-primary" href="{% url 'account_signup' %}">
+            {% translate "Create account" %}
+          </a>
+          <a class="pg-button-secondary" href="{% url 'account_login' %}">
+            {% translate "Sign In" %}
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

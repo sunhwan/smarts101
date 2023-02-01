@@ -1,0 +1,22 @@
+.idea
+*.pyc
+*~
+db.sqlite3
+.sass-cache/
+celerybeat-schedule
+smarts101/localsettings.py
+smarts101/local.py
+static_root/
+node_modules/
+openapitools.json
+media/
+docs/_build
+_dist/
+.env
+.env.docker
+.env.production
+.DS_Store
+
+# uncomment these lines after setting up the front-end build pipeline in dev and production
+# static/css/
+# static/js/

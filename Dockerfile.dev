@@ -1,0 +1,29 @@
+FROM python:3.9-buster
+ENV PYTHONUNBUFFERED=1
+
+# install node/npm
+RUN \
+  echo "deb https://deb.nodesource.com/node_16.x buster main" > /etc/apt/sources.list.d/nodesource.list && \
+  wget -qO- https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add - && \
+  apt-get update && \
+  apt-get install -yqq nodejs
+
+# install gettext for translations
+RUN apt-get -yqq install gettext
+
+# create code directory
+RUN mkdir /code
+WORKDIR /code
+
+# install python requirements
+RUN pip install --upgrade pip
+RUN pip install pip-tools  # for building new requirements.txt files
+
+# copy just requirements and install before rest of code to avoid having to
+# reinstall packages during build every time code changes
+COPY requirements.txt requirements.txt
+COPY requirements requirements/
+RUN pip install -r requirements.txt
+
+# copy code files
+COPY . /code/

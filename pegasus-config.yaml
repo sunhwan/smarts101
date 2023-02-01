@@ -1,0 +1,27 @@
+default_context:
+  _pegasus_version: '2022.12'
+  author_name: Sunhwan Jo
+  ci: github_actions
+  css_framework: tailwind
+  css_theme: default
+  database: postgres
+  deploy_platform: heroku_docker
+  description: 'SMARTS101: Build, Test, Debug SMARTS String'
+  domain_name: localhost:8000
+  email: sunhwanj@gmail.com
+  enable_google_login: y
+  enable_twitter_login: n
+  front_end_framework: htmx
+  project_name: SMARTS101
+  project_slug: smarts101
+  stripe_payment_mode: checkout
+  subscription_billing_model: default
+  use_2fa: y
+  use_api_keys: y
+  use_docker: y
+  use_impersonation: y
+  use_sentry: n
+  use_subscriptions: n
+  use_teams: n
+  use_translations: y
+  use_wagtail: n

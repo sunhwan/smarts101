@@ -1,0 +1,35 @@
+{% load i18n %}
+<li class="menu-title">
+  <span>{% translate "Application" %}</span>
+</li>
+<li>
+  <a href="{% url 'web:home' %}" {% if active_tab == 'dashboard' %}class="active"{% endif %}>
+    <i class="fa fa-home"></i>
+    {% translate "Dashboard" %}
+  </a>
+</li>
+<li class="menu-title">
+  <span>{% translate "My Account" %}</span>
+</li>
+<ul class="menu-list">
+  <li>
+    <a href="{% url 'users:user_profile' %}" {% if active_tab == 'profile' %}class="active"{% endif %}>
+      <i class="fa fa-user"></i>
+      {% translate "Profile" %}
+    </a>
+  </li>
+  {% if user.has_usable_password %}
+  <li>
+    <a href="{% url 'account_change_password' %}" {% if 'accounts/password/change' in request.path %}class="active"{% endif %}>
+      <i class="fa fa-unlock-alt"></i>
+      {% translate "Change Password" %}
+    </a>
+  </li>
+  {% endif %}
+  <li>
+    <a href="{% url 'account_logout' %}" {% if 'accounts/logout' in request.path %}class="active"{% endif %}>
+      <i class="fa fa-sign-out"></i>
+      {% translate "Sign out" %}
+    </a>
+  </li>
+</ul>

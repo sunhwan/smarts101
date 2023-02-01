@@ -1,0 +1,10 @@
+{% extends 'web/components/top_nav.html' %}
+{% block mobile_nav %}
+  <li>
+    <a href="{% url 'web:home' %}">
+      <i class="fa fa-arrow-left"></i>
+      Back to App
+    </a>
+  </li>
+  {% include 'pegasus/examples/components/examples_nav_menu_items.html' %}
+{% endblock %}
